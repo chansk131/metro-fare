@@ -1,17 +1,17 @@
-import React from "react";
+import React from "react"
 import {
   AppBar,
   Grid,
   IconButton,
   Toolbar,
   Typography,
-} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import { useDrawerContext } from "../../contexts/DrawerProvider";
-import { canShowSideMenuDrawer } from "../../config/featureToggle";
+} from "@material-ui/core"
+import MenuIcon from "@material-ui/icons/Menu"
+import { useDrawerContext } from "../../contexts/DrawerProvider"
+import { canShowSideMenuDrawer } from "../../config/featureToggle"
 
 export const AppHeaderBar = () => {
-  const { setSideMenu } = useDrawerContext();
+  const { setSideMenu } = useDrawerContext()
 
   return (
     <AppBar position="static">
@@ -27,12 +27,17 @@ export const AppHeaderBar = () => {
             MetroFare
           </Typography>
           {canShowSideMenuDrawer() && (
-            <IconButton edge="start" color="inherit" aria-label="menu">
-              <MenuIcon onClick={() => setSideMenu(true)} />
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={() => setSideMenu(true)}
+            >
+              <MenuIcon />
             </IconButton>
           )}
         </Grid>
       </Toolbar>
     </AppBar>
-  );
-};
+  )
+}
